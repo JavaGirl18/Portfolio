@@ -19,7 +19,7 @@ connection.on('error', (err) => {
 });
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var projectsRouter = require('./routes/projects');
 
 var app = express();
 
