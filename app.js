@@ -29,8 +29,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api', indexRouter);
+app.use('/api/projects', projectsRouter);
+app.use('/api/projects/:projectId', projectsRouter);
+
 
 app.get('/', (req, res) => {
     res.sendFile(`${__dirname}/client/build/index.html`)
