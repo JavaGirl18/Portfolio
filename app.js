@@ -6,7 +6,7 @@ var logger = require('morgan');
 const bodyParser = require('body-parser')
 
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); 
 
 const connection = mongoose.connection;
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', indexRouter);
 app.use('/api/projects', projectsRouter);
-app.use('/api/projects/:projectId', projectsRouter);
+// app.use('/api/projects/:projectId', projectsRouter);
 
 
 app.get('/', (req, res) => {

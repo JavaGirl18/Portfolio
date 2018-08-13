@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
+import axios from 'axios'
+import Projects from './components/Projects'
 
 class App extends Component {
+  state = {
+    projects:[]
+  }
+
+  componentDidMount() {
+    this.getProjects()
+  }
+
+  getProjects = () => {
+    axios.get('/api/projects').then((res) => {
+      this.setState({ projects: res.data })
+    })
+
+      .catch((err) => {
+        console.error(err)
+      })
+  }
+
   render() {
+    const ProjectsPage = (props) => {
+      return (
+        <Projects projects={this.state.projects}{...props} />
+      )
+    }
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+    <Router>
+      <Switch>
+      {/* <Route exact path='/' component={HomePage}></Route> */}
+          <Route exact path='/projects' render={ProjectsPage}></Route>
+          {/* <Route exact path='/projects/:id' render={ProjectPage}></Route> */}
+      </Switch>
+    </Router>
     );
   }
 }
