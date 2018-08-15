@@ -4,6 +4,27 @@ import axios from 'axios'
 import Projects from './components/Projects'
 import Project from './components/Project'
 import Resume from './components/Resume'
+import styled from 'styled-components'
+
+const Icons = styled.div`
+display: flex;
+
+padding: 40px;
+margin-left: 650px;
+i{
+  color:black;
+}
+
+`
+const Contain = styled.div`
+color:white;
+align-items: center;
+margin-top: 50px;
+`
+const Email = styled.div`
+font-size: 20px;
+font-family: 'Amatic SC', cursive;
+`
 class App extends Component {
   state = {
     projects:[]
@@ -50,6 +71,19 @@ class App extends Component {
           <Route exact path='/projects/:id' render={ProjectPage}></Route>
       </Switch>
     </Router>
+    <center>
+      <Contain>
+    <i aria-hidden='true' class='asterisk loading icon'/><h1>Contact Me</h1>
+    <hr></hr>
+    <Email>
+     <p>Email: valenciacooper89@gmail.com</p></Email>
+     <Icons>
+     
+  <i aria-hidden='true' class='github large icon' />
+                    <a href="#" class="fa fa-linkedin"></a>
+                   
+                    </Icons>
+   </Contain>  </center>
    </div>
     );
   }
