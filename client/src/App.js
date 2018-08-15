@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import axios from 'axios'
 import Projects from './components/Projects'
-
+import Project from './components/Project'
+import Resume from './components/Resume'
 class App extends Component {
   state = {
     projects:[]
@@ -28,15 +29,28 @@ class App extends Component {
         <Projects projects={this.state.projects}{...props} />
       )
     }
+    const ProjectPage = (props) => {
+      return (
+        <Project getProjects={this.getProjects}project={this.state.projects}{...props} />
+      )
+    }
+    const ResumePage = (props) => {
+      return (
+        <Resume {...props} />
+      )
+    }
 
     return (
+   <div id = "container">
     <Router>
       <Switch>
-      {/* <Route exact path='/' component={HomePage}></Route> */}
+      <Route exact path='/' component={ProjectsPage}></Route>
+      <Route exact path='/resume' component={ResumePage}></Route>
           <Route exact path='/projects' render={ProjectsPage}></Route>
-          {/* <Route exact path='/projects/:id' render={ProjectPage}></Route> */}
+          <Route exact path='/projects/:id' render={ProjectPage}></Route>
       </Switch>
     </Router>
+   </div>
     );
   }
 }

@@ -19,9 +19,9 @@ mongoose.connect(process.env.MONGODB_URI)
         languages: "JQuery, JavaScript HTML & CSS",
         frameworks: "Date",
         database:"N/A",
-        heroku_link: "https://www.bitballoon.com/sites/heuristic-poincare-bb77bd",
+        heroku_link: "https://wizardly-banach-ed0420.netlify.com/",
         git_hub_link: "https://github.com/JavaGirl18/Black-Jack",
-        image: "./public/images/bj.png"
+        image: "../public/images/bj.png"
     })
     const project2 = new ProjectsModel({
         projectName: "Budget Up",
@@ -31,7 +31,7 @@ mongoose.connect(process.env.MONGODB_URI)
         database: "MongoDB",
         heroku_link: "https://secret-fjord-87063.herokuapp.com/",
         git_hub_link: "https://github.com/JavaGirl18/BudgetUp",
-        image: "./public/images/bu.png"
+        image: "../public/images/bu.png"
     })
     const project3 = new ProjectsModel({
         projectName: "Get Ish Done!",
@@ -41,7 +41,7 @@ mongoose.connect(process.env.MONGODB_URI)
         database: "MongoDB",
         heroku_link: "https://getishdone.herokuapp.com/",
         git_hub_link: "https://github.com/JavaGirl18/getIshDone-",
-        image: "./public/images/gis.png"
+        image: "../public/images/gis.png"
     })
     const project4 = new ProjectsModel({
         projectName: "Code.Universe",
@@ -51,7 +51,7 @@ mongoose.connect(process.env.MONGODB_URI)
         database:"PostgreSQL",
         heroku_link: "https://code-universe.herokuapp.com/",
         git_hub_link: "https://github.com/JavaGirl18/Code.Universe",
-        image: "./public/images/cu.png"
+        image: "../public/images/cu.png"
     })
 
     const projects = [project1, project2, project3, project4]

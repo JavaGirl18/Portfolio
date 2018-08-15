@@ -1,5 +1,25 @@
+
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+.zoom {
+  padding: 20px;
+  transition: transform .2s; /* Animation */
+margin-top: 200px;
+background: linear-gradient(to right, #d66d75, #e29587); 
+width: 150vw;
+border: solid;
+border-radius: 13px;
+margin-left: 10px;
+color: white;
+}
+.zoom:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+
