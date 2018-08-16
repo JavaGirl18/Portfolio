@@ -79,8 +79,8 @@ class App extends Component {
      <p>Email: valenciacooper89@gmail.com</p></Email>
      <Icons>
      
-  <i aria-hidden='true' class='github large icon' />
-                    <a href="#" class="fa fa-linkedin"></a>
+  <a href='https://github.com/JavaGirl18'><i aria-hidden='true' class='github large icon' /></a>
+                    <a href="https://www.linkedin.com/in/valencia-cooper-mba/" class="fa fa-linkedin"></a>
                    
                     </Icons>
    </Contain>  </center>
